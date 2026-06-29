@@ -141,13 +141,9 @@ main {
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
-  border: 5px solid #00f5d4;
-  box-shadow: 0 0 30px rgba(0, 245, 212, 0.35);
+  border: 5px solid white;
+  box-shadow: 0 0 30px white(0, 245, 212, 0.35);
   transition: transform 0.3s ease;
-}
-
-.profile img:hover {
-  transform: scale(1.05);
 }
 
 .section {
