@@ -253,3 +253,24 @@ main {
         text-align: center;
     }
 }
+
+.profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile img {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #00F5D4;
+    padding: 8px;
+    background: linear-gradient(135deg,#00F5D4,#7B2FFF,#FF3CAC);
+    box-shadow: 0 0 40px rgba(0,245,212,.4);
+}
+
+.profile img:hover {
+    transform: scale(1.05);
+}
