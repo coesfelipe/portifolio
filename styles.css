@@ -31,6 +31,7 @@ a {
   top: 0;
   z-index: 10;
   border-bottom: 1px solid #222;
+  backdrop-filter: blur(10px);
 }
 
 .logo {
@@ -59,8 +60,13 @@ main {
 .hero {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  gap: 64px;
+  padding-top: 90px;
+}
+
+.hero-text {
   max-width: 760px;
 }
 
@@ -83,7 +89,7 @@ main {
 #typing::after {
   content: "|";
   color: #fff;
-  animation: blink .8s infinite;
+  animation: blink 0.8s infinite;
 }
 
 @keyframes blink {
@@ -109,6 +115,7 @@ main {
   border: 1px solid #333;
   border-radius: 8px;
   color: #ddd;
+  transition: 0.3s;
 }
 
 .btn:hover {
@@ -121,6 +128,28 @@ main {
   color: #111;
 }
 
+.profile {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile img {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  border: 5px solid #00f5d4;
+  box-shadow: 0 0 30px rgba(0, 245, 212, 0.35);
+  transition: transform 0.3s ease;
+}
+
+.profile img:hover {
+  transform: scale(1.05);
+}
+
 .section {
   padding: 120px 0;
 }
@@ -128,6 +157,16 @@ main {
 .section h2 {
   font-size: 2rem;
   margin-bottom: 32px;
+}
+
+.sobre {
+  max-width: 800px;
+}
+
+.sobre p {
+  color: #b5b5b5;
+  font-size: 1.1rem;
+  margin-bottom: 18px;
 }
 
 .grid {
@@ -142,6 +181,12 @@ main {
   border: 1px solid #252525;
   border-radius: 12px;
   color: #ddd;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: #fff;
 }
 
 .projects {
@@ -194,83 +239,72 @@ main {
   color: #fff;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column-reverse;
+    justify-content: center;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .descricao {
+    margin: 0 auto;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+
+  .profile img {
+    width: 240px;
+    height: 240px;
+  }
+}
+
+@media (max-width: 768px) {
   .header {
     padding: 20px 6%;
   }
 
   nav {
-    gap: 12px;
-  }
-
-  nav a {
-    font-size: 0.85rem;
+    display: none;
   }
 
   main {
     padding: 0 6%;
   }
 
+  .hero h1 {
+    font-size: 3.2rem;
+    line-height: 1.1;
+  }
+
+  .descricao,
+  .sobre p {
+    font-size: 1rem;
+  }
+
   .buttons {
     flex-direction: column;
   }
+
+  .buttons a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .section {
+    padding: 90px 0;
+  }
 }
 
-/* Tablets */
-@media (max-width: 1024px) {
-    h1 {
-        font-size: 5rem;
-    }
-}
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2.7rem;
+  }
 
-/* Celulares */
-@media (max-width: 768px) {
-
-    nav {
-        display: none; /* depois você pode trocar por um menu hambúrguer */
-    }
-
-    .hero {
-        padding: 40px 24px;
-    }
-
-    h1 {
-        font-size: 3.5rem;
-        line-height: 1.1;
-    }
-
-    p {
-        font-size: 1.8rem;
-    }
-
-    .buttons {
-        flex-direction: column;
-        gap: 16px;
-    }
-
-    .buttons a {
-        width: 100%;
-        text-align: center;
-    }
-}
-
-.profile {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.profile img {
-    width: 320px;
-    height: 320px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #00F5D4;
-    padding: 8px;
-    background: linear-gradient(135deg,#00F5D4,#7B2FFF,#FF3CAC);
-    box-shadow: 0 0 40px rgba(0,245,212,.4);
-}
-
-.profile img:hover {
-    transform: scale(1.05);
+  .profile img {
+    width: 210px;
+    height: 210px;
+  }
 }
