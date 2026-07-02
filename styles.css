@@ -94,6 +94,11 @@ main {
   animation: blink 0.8s infinite;
 }
 
+#typing.finished::after {
+  content: "";
+  animation: none;
+}
+
 @keyframes blink {
   50% {
     opacity: 0;

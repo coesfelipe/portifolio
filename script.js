@@ -22,6 +22,8 @@ function escrever2() {
         typing.textContent += text2.charAt(j);
         j++;
         setTimeout(escrever2, 90);
+    }else{
+        typing.classList.add("finished");
     }
 }
 
